@@ -1,0 +1,125 @@
+%package import && config
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{circuitikz}
+\usepackage{abstract}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{lastpage}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[backend=biber]{biblatex}
+\usepackage{csquotes}
+
+%%%% Page Margins
+
+\geometry{
+  a4paper,
+	includeheadfoot,
+	vmargin=3cm,
+  hmargin=2cm,
+}
+  
+%%%% Constants
+\newcommand{\course}{\kurs}
+\newcommand{\bib}{\bibfile}
+  
+%%%% bIbTeX
+  
+\addbibresource{sources.bib}
+
+%%%% Title and sec
+% \renewcommand{\section}{\@startsection
+% {section}%                   % the name
+% {1}%                         % the level
+% {0mm}%                       % the indent
+% {-\baselineskip}%            % the before skip
+% {0.5mm}%          % the after skip
+% {\normalfont\bfseries}} % the style
+% %\renewcommand{\sectionmark}[1]{ }
+% %\renewcommand{\thesection}{}
+
+\renewcommand*\maketitle{
+  {
+    \begin{center}
+      {\huge\bfseries \@title}\\
+      \vspace{5mm}
+      {\large \@author}
+    \end{center}
+    \vspace{2mm}
+  }
+}
+
+
+%%% New env
+\newenvironment{fig}{ %graphic
+    \begin{figure}[H]\centering\begin{minipage}{0.45\textwidth}\centering
+        }{
+    \end{minipage}\end{figure}
+}
+
+\newenvironment{tab}{ %Table
+    \begin{table}[H]\centering\begin{minipage}{0.45\textwidth}\centering
+        }{
+    \end{minipage}\end{table}
+}
+
+
+%%% Support for code listing
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\lstset{style=mystyle}
+
+\lstset{
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={å}{{\r{a}}}1 {ä}{{\"a}}1 {ö}{{\"o}}1,
+}
+
+%%%% Headr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhf{}
+\fancyhead[L]{\@title}
+\fancyhead[R]{\course}
+\fancyhead[C]{}
+\fancyfoot[C]{Sida \thepage\ av \pageref*{LastPage}}
+
+
+%%% Misc. Commands
+\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}

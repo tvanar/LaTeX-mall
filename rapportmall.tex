@@ -1,0 +1,39 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{rapportmall}
+
+\title{Operationsförstärkare} %% titel
+\author{NAME} %% Namn
+\def\kurs{Analog Elektronik, ESSF01} %% Kurs
+\def\bibfile{sources.bib} %% .bib fil med källor
+
+%% FIGURES ARE IN THE \fig enviroment
+%% TABLES ARE IN THE \tab enviroment
+
+
+\begin{document}
+\thispagestyle{empty}
+\setcounter{page}{0}
+\maketitle
+\newpage
+\begin{abstract}
+    \lipsum[1-2]
+\end{abstract}
+\newpage
+%%%% TOC %%%%
+\tableofcontents
+\newpage
+%%%%     %%%%
+
+\begin{multicols}{2}
+
+\section{Introduktion}
+\section{Metod}
+\section{Resultat}
+\section{Diskussion}
+\section{Slutsats}
+\end{multicols}
+\printbibliography
+
+\end{document}
