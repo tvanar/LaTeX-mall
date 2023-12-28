@@ -1,7 +1,10 @@
 \documentclass[a4paper, 10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[swedish]{babel}
+\usepackage[english, swedish]{babel}
 \usepackage{rapportmall}
+\usepackage{lipsum}
+
+
 
 \title{Operationsförstärkare} %% titel
 \author{NAME} %% Namn
@@ -10,24 +13,31 @@
 
 %% FIGURES ARE IN THE \fig enviroment
 %% TABLES ARE IN THE \tab enviroment
-
+%% Preferable to use \insert
 
 \begin{document}
+%%%% Title Page %%%%
 \thispagestyle{empty}
 \setcounter{page}{0}
 \maketitle
 \newpage
+%%%%            %%%%
+
+%%%% Abstract %%%%
+\selectlanguage{english}
 \begin{abstract}
-    \lipsum[1-2]
+\lipsum[1-2]
 \end{abstract}
+\selectlanguage{swedish}
 \newpage
+%%%%          %%%%
+    
 %%%% TOC %%%%
 \tableofcontents
 \newpage
 %%%%     %%%%
 
 \begin{multicols}{2}
-
 \section{Introduktion}
 \section{Metod}
 \section{Resultat}
@@ -35,5 +45,6 @@
 \section{Slutsats}
 \end{multicols}
 \printbibliography
-
+\section*{Bilagor}
+% \lstinputlisting[language = python, caption = , label = ]{test.py}
 \end{document}

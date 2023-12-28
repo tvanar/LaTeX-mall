@@ -1,3 +1,15 @@
 /homework.pdf
 /rapportmall.pdf
 /sources.bib
+*.aux
+*.bbl
+*.run.xml
+*.synctex.gz
+*.out
+*.log
+*.blg
+*.fls
+*.bcf
+*.fdb_latexmk
+*.toc
+*.synctex(busy)
