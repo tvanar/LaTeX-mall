@@ -1,5 +1,4 @@
-/homework.pdf
-/rapportmall.pdf
+*.pdf
 /sources.bib
 *.aux
 *.bbl
@@ -13,3 +12,6 @@
 *.fdb_latexmk
 *.toc
 *.synctex(busy)
+*.png
+*.svg
+*.zip
