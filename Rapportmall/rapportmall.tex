@@ -6,20 +6,23 @@
 
 
 
-\title{Operationsförstärkare} %% titel
+\title{Titel} %% titel
+\def\titledescription{Undertitel} %% smaller text below the title
 \author{NAME} %% Namn
 \def\kurs{Analog Elektronik, ESSF01} %% Kurs
-\def\bibfile{sources.bib} %% .bib fil med källor
+\addbibresource{refrences.bib} %% .bib fil med källor
+\def\advisor{Advisor} %% Handledare
 
 %% FIGURES ARE IN THE \fig enviroment
 %% TABLES ARE IN THE \tab enviroment
-%% Preferable to use \insert
+%% Preferable to use subfiles
 
 \begin{document}
+
 %%%% Title Page %%%%
 \thispagestyle{empty}
 \setcounter{page}{0}
-\maketitle
+\firstpage
 \newpage
 %%%%            %%%%
 
@@ -46,5 +49,6 @@
 \end{multicols}
 \printbibliography
 \section*{Bilagor}
+\appendix
 % \lstinputlisting[language = python, caption = , label = ]{test.py}
 \end{document}

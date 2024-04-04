@@ -15,9 +15,12 @@
 \usepackage{lastpage}
 \usepackage{float}
 \usepackage{caption}
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber, style = ieee]{biblatex}
 \usepackage{csquotes}
 \usepackage{abstract}
+\usepackage[final]{pdfpages}
+\usepackage{subfiles}
+\usepackage{siunitx}
 
 %%%% Page Margins
 
@@ -33,19 +36,9 @@
   
 %%%% bIbTeX
   
-\addbibresource{sources.bib}
+\addbibresource{refrences.bib}
 
 %%%% Title and sec
-% \renewcommand{\section}{\@startsection
-% {section}%                   % the name
-% {1}%                         % the level
-% {0mm}%                       % the indent
-% {-\baselineskip}%            % the before skip
-% {0.5mm}%          % the after skip
-% {\normalfont\bfseries}} % the style
-% %\renewcommand{\sectionmark}[1]{ }
-% %\renewcommand{\thesection}{}
-
 \renewcommand*\maketitle{
   {
     \begin{center}
@@ -55,6 +48,31 @@
     \end{center}
     \vspace{2mm}
   }
+}
+
+\makeatletter
+\newcommand{\firstpage}{
+        \thispagestyle{empty}
+        \setcounter{page}{0}
+		\begin{center}
+            \begin{figure}[h!]
+                \begin{minipage}{0.3\textwidth}
+                    \includegraphics[width=5cm]{_res/lth_logo.png}
+                \end{minipage}
+            \end{figure}
+			\vspace*{3cm}
+			\Huge\textbf{\@title}\\
+            \vspace{10pt}
+            \Large{\titledescription}\\
+            \vspace{2cm}
+            \large{\@author}
+		\end{center}
+        \vfill
+        \begin{tabular}{ll}
+        Handledare: & \advisor\\
+        Kurs: & \course\\
+        %% Fyll på mer info
+        \end{tabular}
 }
 
 
@@ -122,4 +140,6 @@
 
 
 %%% Misc. Commands
-\newcommand{\unit}[1]{\ensuremath{\,\mathrm{#1}}}
+
+%%%% Section numbering of equations
+\numberwithin{equation}{section}
