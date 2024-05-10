@@ -1,12 +1,12 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
 \usepackage{ppt}
-\usetheme{Malmoe}
-% \usefonttheme{serif}
-\usefonttheme{structuresmallcapsserif}
+\usetheme{simple}
+\usefonttheme{serif}
 
 
 \title{TITEL}
-\author{Författare}
+\author[Short Auth]{Författare}
+\institute[LTH]{Lunds Universitet, LTH}
 \date{\today}
 \titlegraphic{\includegraphics[width=4cm]{_res/lth_logo.png}}
 
@@ -16,13 +16,16 @@
     \titlepage
 \end{frame}
 
-
-\begin{frame}
-    \tableofcontents
-\end{frame}
-
 \begin{frame}{Detta är en slide}
-    
+    \begin{block}{Detta är ett block}
+        Detta är text i ett block
+    \end{block}
+    \begin{alertblock}{Varning}
+        !!!
+    \end{alertblock}
+    \begin{exampleblock}{Exempel}
+        Exempelvis $x = y$
+    \end{exampleblock}
 \end{frame}
 
 
